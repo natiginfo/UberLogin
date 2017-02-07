@@ -22,3 +22,24 @@ Step 2. Add the dependency
 	        compile 'com.github.natiginfo:UberLogin:v1.0'
 	}
 ```
+
+### Step 3:
+Step 3: Use inside activity:
+
+``` 
+UberLogin uberLogin = new UberLogin(this) {
+            @Override
+            public void onGetToken(String response) {
+                Log.d("Uber Login Success", response);
+            }
+
+            @Override
+            public void onGetError(String response) {
+                Log.d("Uber Login Error", response);
+            }
+        };
+
+uberLogin.setClientId("UBER_CLIENT_ID");
+uberLogin.setClientSecret("UBER_CLIENT_SECRET");
+uberLogin.setServerToken("UBER_SERVER_TOKEN");
+```
